@@ -1,0 +1,6 @@
+version 0.1.1
+    * changed name so it doesn't conflict with any other plugin
+
+version 0.1.0
+    * initial release
+
