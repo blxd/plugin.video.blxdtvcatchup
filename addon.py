@@ -3,10 +3,32 @@ from xbmcswift2 import Plugin
 from operator import itemgetter
 import urllib2
 
-CHANNEL_MAP = {1: "BBC One"}
+CHANNEL_MAP = {1: "BBC One",
+               2: "BBC Two",
+               3: "ITV One",
+               4: "Channel 4",
+               5: "Channel 5",
+               17: "BBC News",
+               18: "CBBC",
+               24: "CBeeBies",
+               12: "BBC3",
+               13: "BBC4",
+               501: "MillenniumTV",
+               73: "Quest",
+               37: "VIVA",
+               31: "BBC Parliament",
+               78: "RT",
+               65: "BBC Red Button",
+               95: "Gala TV",
+               151: "Sail TV",
+               177: "Sub TV",
+               158: "Community Channel",
+               144: "S4C"}
+
 plugin = Plugin()
 
 M3U8_PATTERN = re.compile(r"\"(http://.*m3u8.*clientKey=[^\"]*)\";")
+
 
 def http_get(url):
     req = urllib2.Request(url)
@@ -25,7 +47,7 @@ def index():
              'path': plugin.url_for('play_stream', stream_id=cid),
              'is_playable': True,
              'thumbnail': 'http://tvcatchup.com/tvc-static//images/channels/v3/{0}.png'.format(cid)}
-            for cid, name in sorted(CHANNEL_MAP.items(), itemgetter(0))]
+            for cid, name in sorted(CHANNEL_MAP.items(), key=itemgetter(0))]
 
 
 @plugin.route('/stream/<stream_id>')
