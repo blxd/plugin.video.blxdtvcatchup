@@ -1,3 +1,7 @@
+version 0.2.0
+	* updated the plugin to support the new site, unfortunately it is
+	geo-locked to the UK
+
 version 0.1.1
     * changed name so it doesn't conflict with any other plugin
 
