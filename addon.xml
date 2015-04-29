@@ -2,14 +2,15 @@
 <addon id="plugin.video.blxdtvcatchup" name="TV Catchup (blxd edition)" version="0.1.1" provider-name="blxd">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
-    <import addon="script.module.requests" version="2.4.3"/>
-    <import addon="script.module.simplejson" version="3.3.0"/>
+    <import addon="script.module.httplib2" version="0.8.0"/>
+    <import addon="script.module.xbmcswift2" version="2.4.0"/>
   </requires>
  <extension point="xbmc.python.pluginsource" library="addon.py">
     <provides>video</provides>
   </extension>
   <extension point="xbmc.addon.metadata">
     <summary lang="en">Live streams from TVCatchup.com</summary>
+    <disclaimer>May not work outside the UK/Ireland</disclaimer>
     <platform>all</platform>
   </extension>
 </addon>
